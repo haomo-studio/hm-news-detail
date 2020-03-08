@@ -6,19 +6,21 @@
 
 ## 预览
 
-![预览图片](http://downloads.haomo-tech.com/uniapp/hm-news-card.png)
+![预览图片](http://downloads.haomo-tech.com/uniapp/hm-news-detail.png)
 
-[在线效果预览](http://template.uniapp.haomo-tech.com/pages/haomo/test-component/hm-news-card)
+[在线效果预览](http://template.uniapp.haomo-tech.com/pages/haomo/test-component/hm-news-detail)
 
 更多毫末科技的uni-app跨端模板，请见[毫末科技uni-app跨端模板](https://haomo-tech.com/sale.html)
 
 ## 技术支持
 
-* [uni-app插件市场](https://ext.dcloud.net.cn/plugin?id=1380)
+* [uni-app插件市场](https://ext.dcloud.net.cn/plugin?id=1384)
 
-* [npm包](https://www.npmjs.com/package/hm-news-card)
+* [npm包](https://www.npmjs.com/package/hm-uniapp-news-detail)
 
-* [github地址](https://github.com/haomo-studio/hm-uniapp-news-card)
+* [github地址](https://github.com/haomo-studio/hm-uniapp-news-detail)
+
+* [gitee地址](https://gitee.com/haomo/hm-uniapp-news-detail)
 
 毫末科技将长期迭代本组件。需要技术支持，请进钉钉群：
 
@@ -35,9 +37,9 @@
 在script中引用：
 
 ```javascript
-import HmNewsCard from '@/components/hm-news-card/index.vue'
+import HmNewsCard from '@/components/hm-news-detail/index.vue'
 export default {
-    components: {HmNewsCard}
+    components: {HmNewsDetail}
 }
 ```
 
@@ -46,35 +48,35 @@ export default {
 ```html
 <template>
   <div class="test-component">
-    <hm-news-card :options="options" @click="onClick"></hm-news-card>
+    <hm-news-detail :options="options"></hm-news-detail>
   </div>
 </template>
 <script>
-import HmNewsCard from '@/components/hm-components/hm-news-card/index.vue'
+import HmNewsDetail from '@/components/hm-components/hm-news-detail/index.vue'
 
 export default {
-  components: {HmNewsCard},
+ components: {HmNewsDetail},
   data() {
     return {
       options: {
-          img: '/static/hm-news-card/images/img_22726_0_0.png',
-          title: '新闻标题',
-          author: '作者',
-          date: '16 MAY 2016',
-          summary:
-            '新闻概要。新闻概要长度最好控制在50字符以内',
-          comments: "14 评论",
-          likes: "254 喜欢",
-          url: '',
-          showComments: true,
-          showLikes: true
+          yunshu:
+            '/static/hm-news-detail/images/img_22946_0_0.png',
+          author: '毫末科技',
+          like:
+            '/static/hm-news-detail/images/img_22946_0_1.png',
+          share:
+            '/static/hm-news-detail/images/img_22946_0_2.png',
+          time: '2 minutes ago',
+          title: '如何用 Python 在笔记本上分析100GB 数据',
+          img:
+            '/static/hm-news-detail/images/img_22946_0_3.png',
+          content:
+            '第 1 种是对数据进行子抽样，但它有一个明显缺点：可能因忽略部分数据而错失关键信息，甚至误解数据表达的含义。第 2 种是使用分布式计算。虽然在某些情况下这是一种有效的方法，但是管理和维护集群会带来巨大开销。想象一下，要为一个刚超出内存大小、大概 30-50GB 的数据集就建立一套集群，对我来说，这似乎有点“用力过猛”。'
         }
     };
   },
   methods: {
-    onClick: function(e) {
-      console.log('onClick');
-    }
+    
   }
 };
 </script>
@@ -92,24 +94,20 @@ options对象各个属性说明如下：
 
 | 属性名        | 类型     | 默认值 | 说明                                                                       |
 |-----------   |---------|--------|----------------------------------------------------------------------------|
-| title        | String  | -      | 标题文字                                                                   |
+| yunshu        | String  | -      | 头像图片                                                                   |
 | author       | String  | -      | 作者                                                               |
-| summary      | String  | -      | 摘要                                                                   |
-| date         | String  | -      | 日期                                                             |
-| img          | String  | -  | 新闻图片                                                     |
-| showComments| Boolean  | true  | 是否显示评论数                                                     |
-| showLikes   | Boolean  | true  | 是否显示喜欢数                                                     |
-| comments     | String | -  | 评论                                  |
-| likes        | String | -  | 喜欢                                                       |
+| share         | String  | -      | 收藏图片                                                             |
+| like          | String  | -      | 分享图片                                                             |
+| time          | String  | -  | 新闻时间                                                     |
+| title        | String  | -      | 标题文字                                                                   |
+| img   | String  | -   | 新闻内容图片                                                     |
+| content     | String | -  | 内容                                  |
 
 ## 事件说明
 
-| 事件称名   | 事件说明           | 返回参数 |
-|----------|--------------------|----------|
-| @click   | 点击 Card 触发事件 | -        |
 
 ## 更新日志
 
-### 0.0.1(2020-03-07)
+### 0.0.1(2020-03-08)
 
 * 完成第一个版本
